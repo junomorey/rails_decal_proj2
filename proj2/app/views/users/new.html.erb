@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	        <h1><%= link_to "Fuby", root_path %></h1>
+	    </div>
+	  </div>
+	</nav>
+	<div>
+	<% @users.each do |u| %>
+		<li><%= link_to u.name, users_path(u) %></li>
+	<% end %>
+	</div>
+</body>
+</html>
